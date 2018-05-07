@@ -1,6 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 
+# 참고 : 크롬에서 가져오는 값
+# HTML : <img src="http://image.yes24.com/sysimage/interface/smallStarOn.gif" align="absmiddle">
+# SELECTOR : #bestList > ol > li.num1 > p:nth-child(7) > img:nth-child(1)
+# XPATH //*[@id="bestList"]/ol/li[1]/p[7]/img[1]
+
 url = "http://www.yes24.com/24/category/bestseller"
 html = requests.get(url).text
 soup = BeautifulSoup(html, "html.parser")
@@ -41,7 +46,3 @@ for book in bestList[:5]:
 
     print(title, author, company, price_text, price, star_content, star_edit, sep=' / ')
 
-# 참고 : 크롬에서 가져오는 값 
-    # HTML : <img src="http://image.yes24.com/sysimage/interface/smallStarOn.gif" align="absmiddle">
-    # SELECTOR : #bestList > ol > li.num1 > p:nth-child(7) > img:nth-child(1) 
-    # XPATH //*[@id="bestList"]/ol/li[1]/p[7]/img[1]
