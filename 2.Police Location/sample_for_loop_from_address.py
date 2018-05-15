@@ -37,9 +37,8 @@ gu_name = []
 #     tmp = name.split()
 #     # 주소에서 '강'으로 시작하는 주소를 찾아내서 별도의 리스트에 저장
 #     for gu in tmp:
-#         if gu[0] == '강':
+#         if gu[-1] == '구':
 #             gu_name.append(gu)
-
 
 # 위의 소스를 간결하게 처리하도록 수정
 for name in station_addreess:
